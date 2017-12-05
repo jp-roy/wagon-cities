@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { setCities } from '../actions';
-import { activeCity } from '../actions';
+import { setActiveCity } from '../actions';
 
 class CityList extends Component {
 
@@ -19,7 +19,7 @@ class CityList extends Component {
 
     return (
       <div className={containerClasses}>
-        {this.props.cities.map((city) => <p key={city.slug} onClick={() => this.props.activeCity(city)}>{city.name}</p> )}
+        {this.props.cities.map((city) => <p key={city.slug} onClick={() => this.props.setActiveCity(city)}>{city.name}</p> )}
       </div>
     );
   }
@@ -34,7 +34,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { setCities, activeCity },
+    { setCities, setActiveCity },
     dispatch
   );
 }

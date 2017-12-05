@@ -12,7 +12,7 @@ class CityList extends Component {
   }
 
   render() {
-    let containerClasses = "list-group-item";
+    let containerClasses = "cities list-group-item";
     if (this.props.city === this.props.activeCity) {
       containerClasses += " selected";
     }

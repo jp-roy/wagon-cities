@@ -11,10 +11,6 @@ class CityList extends Component {
     this.props.setCities();
   }
 
-  handleClick = () => {
-    this.props.activeCity(this.props.city);
-  }
-
   render() {
     let containerClasses = "list-group-item";
     if (this.props.city === this.props.activeCity) {
@@ -23,7 +19,7 @@ class CityList extends Component {
 
     return (
       <div className={containerClasses}>
-        {this.props.cities.map((city, key) => <p key={key} onClick={this.handleClick}>{city.name}</p> )}
+        {this.props.cities.map((city) => <p key={city.slug} onClick={() => this.props.activeCity(city)}>{city.name}</p> )}
       </div>
     );
   }
